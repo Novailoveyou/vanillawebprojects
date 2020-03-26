@@ -43,7 +43,20 @@ function searchMeal(e) {
     // Clear search text
     search.value = '';
   } else {
-    alert('Please enter a search term');
+    if (!resultHeading.innerHTML == '') {
+      const resultHeadingSave = resultHeading.innerHTML;
+      resultHeading.innerHTML =
+        "<p>Please don't leave the search box empty</p>";
+      setTimeout(() => {
+        resultHeading.innerHTML = resultHeadingSave;
+      }, 2000);
+    } else {
+      resultHeading.innerHTML =
+        "<p>Please don't leave the search box empty</p>";
+      setTimeout(() => {
+        resultHeading.innerHTML = '';
+      }, 2000);
+    }
   }
 }
 
