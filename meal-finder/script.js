@@ -10,7 +10,9 @@ function searchMeal(e) {
   e.preventDefault();
 
   // Clear single meal
-  single_mealEl.innerHTML = '';
+  if(!mealsEl.innerHTML == ''){
+    single_mealEl.innerHTML = '';
+  }
 
   // Get search term
   const term = search.value;
